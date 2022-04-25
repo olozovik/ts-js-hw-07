@@ -1,0 +1,22 @@
+.counter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 240px;
+    padding: 20px;
+
+    background-color: rgb(81, 107, 223);
+    border-radius: 5px;
+
+    button {
+        padding: 10px 30px;
+        font-size: 20px;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    span {
+        font-size: 28px;
+    }
+}
