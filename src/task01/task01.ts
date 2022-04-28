@@ -10,19 +10,17 @@
 
 // Вариант 1:
 
-const categoryList = document.querySelectorAll('#categories .item');
+const categoryList = document.querySelectorAll(
+    '#categories .item',
+) as NodeListOf<HTMLLIElement>;
 console.log(`В списке ${categoryList.length} категории.`);
 
 categoryList.forEach(item => {
-    const titleEl = item.querySelector('h2');
-    if (titleEl) {
-        console.log(`Категория: ${titleEl.textContent}`);
-    }
+    const titleEl = item.querySelector('h2') as HTMLHeadingElement;
+    console.log(`Категория: ${titleEl.textContent}`);
 
-    const listEl = item.querySelector('ul');
-    if (listEl) {
-        console.log(`Количество элементов: ${listEl.children.length}`);
-    }
+    const listEl = item.querySelector('ul') as HTMLUListElement;
+    console.log(`Количество элементов: ${listEl.children.length}`);
 });
 
 // Вариант 2:

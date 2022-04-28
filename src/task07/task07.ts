@@ -9,14 +9,14 @@ const inputEl = document.querySelector(
 ) as HTMLInputElement;
 const spanEl = document.querySelector('span#text') as HTMLSpanElement;
 
-const defaultFontSize = Number.parseInt(
+const defaultFontSize: number = Number.parseInt(
     window.getComputedStyle(spanEl, null).getPropertyValue('font-size'),
 );
-const defaultInputValue = inputEl.value;
+const defaultInputValue: number = Number(inputEl.value);
 
 function onInputChange(e: Event): void {
     const currentTarget = e.currentTarget as HTMLInputElement;
-    const diff = Number(currentTarget.value) - Number(defaultInputValue);
+    const diff: number = Number(currentTarget.value) - defaultInputValue;
 
     spanEl.style.fontSize = `${String(defaultFontSize + diff)}px`;
 }

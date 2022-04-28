@@ -7,9 +7,13 @@
 */
 
 const refs = {
-    value: document.getElementById('value'),
-    increment: document.querySelector('button[data-action="increment"]'),
-    decrement: document.querySelector('button[data-action="decrement"]'),
+    value: document.getElementById('value') as HTMLSpanElement,
+    increment: document.querySelector(
+        'button[data-action="increment"]',
+    ) as HTMLButtonElement,
+    decrement: document.querySelector(
+        'button[data-action="decrement"]',
+    ) as HTMLButtonElement,
 };
 
 let counterValue = 0;
@@ -21,10 +25,8 @@ function onClick(action: 'increment' | 'decrement'): void {
         counterValue--;
     }
 
-    if (refs.value?.textContent) {
-        refs.value.textContent = counterValue.toString();
-    }
+    refs.value.textContent = counterValue.toString();
 }
 
-refs.increment?.addEventListener('click', () => onClick('increment'));
-refs.decrement?.addEventListener('click', () => onClick('decrement'));
+refs.increment.addEventListener('click', () => onClick('increment'));
+refs.decrement.addEventListener('click', () => onClick('decrement'));

@@ -22,10 +22,10 @@ const images = [
     },
 ];
 
-const listEl = document.getElementById('gallery');
-listEl?.classList.add('gallery');
+const listEl = document.getElementById('gallery') as HTMLUListElement;
+listEl.classList.add('gallery');
 
-const itemsArr = images.map(image => {
+const itemsArr: HTMLLIElement[] = images.map(image => {
     const liEl = document.createElement('li');
     liEl.classList.add('gallery__item');
     const imageEl = document.createElement('img');
@@ -36,6 +36,6 @@ const itemsArr = images.map(image => {
     return liEl;
 });
 
-listEl?.append(...itemsArr);
+listEl.append(...itemsArr);
 
 export {};

@@ -11,12 +11,12 @@ const ingredients = [
     'Приправы',
 ];
 
-const listEl = document.querySelector('#ingredients');
+const listEl = document.querySelector('#ingredients') as HTMLUListElement;
 
-const listArr = ingredients.map(ingredient => {
+const listArr: HTMLLIElement[] = ingredients.map(ingredient => {
     const listItemEl = document.createElement('li');
     listItemEl.textContent = ingredient;
     return listItemEl;
 });
 
-listEl?.append(...listArr);
+listEl.append(...listArr);

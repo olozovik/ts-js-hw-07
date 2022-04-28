@@ -13,7 +13,7 @@
     Переписать класс в зависимости от условия
 */
 
-const inputEl = document.querySelector('#validation-input');
+const inputEl = document.querySelector('#validation-input') as HTMLInputElement;
 
 type Classes = 'valid' | 'invalid';
 
@@ -27,10 +27,7 @@ function replaceClass(
 }
 
 function onInputBlur(): void {
-    if (!(inputEl instanceof HTMLInputElement)) {
-        return;
-    }
-    const inputLength = Number(inputEl?.dataset.length);
+    const inputLength = Number(inputEl.dataset.length);
 
     if (inputEl.value.length === inputLength) {
         replaceClass(inputEl, 'valid', 'invalid');
@@ -41,6 +38,6 @@ function onInputBlur(): void {
     }
 }
 
-inputEl?.addEventListener('blur', onInputBlur);
+inputEl.addEventListener('blur', onInputBlur);
 
 export {};
